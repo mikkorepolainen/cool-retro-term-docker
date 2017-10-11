@@ -2,11 +2,9 @@
 
 Docker image for running [cool-retro-term](https://github.com/Swordfish90/cool-retro-term) in a docker container.
 
-<!--
 ## Build
 
 `docker build -t mikkorepolainen/cool-retro-term docker`
--->
 
 ## Usage
 
@@ -40,7 +38,6 @@ The following arguments should be used (tweak the launcher or add the xming exec
 The terminal executable complains about unsupported glx 1.3 but it works nevertheless.
 
 > WARNING: Application calling GLX 1.3 function "glXCreatePbuffer" when GLX 1.3 is not supported!  This is an application bug!
-{: terminal}
 
 # References
 
