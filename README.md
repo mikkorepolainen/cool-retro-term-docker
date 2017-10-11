@@ -18,7 +18,15 @@ Keep your configuration by adding a volume for the internal sqlite db: `-v cool-
 
 Append arguments at the end of the command, e.g. `docker run --rm -it mikkorepolainen/cool-retro-term -h` to display usage.
 
-## Using on Windows (10) with Docker for Windows
+## Locally on Linux
+
+You can execute `xhost +` before running to turn off access control for X (perhaps not necessary, probably unadvisable?) and the X connection is managed by mounting the X11 socket as a volume (I'll just pretend I know what that means).
+
+`xhost + && docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY mikkorepolainen/cool-retro-term`
+
+TODO not tested
+
+## On Windows (10) with Docker for Windows
 
 Install an X server, e.g. [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/) or [Xming](https://sourceforge.net/projects/xming/).
 The `<host>` in the `docker run` command should point to the local machine's IP address because `localhost` points to the docker engine virtual machine instead of the local machine.
@@ -41,4 +49,5 @@ The terminal executable complains about unsupported glx 1.3 but it works neverth
 
 # References
 
-<http://somatorio.org/en/post/running-gui-apps-with-docker/>
+- <http://somatorio.org/en/post/running-gui-apps-with-docker/>
+- <https://blog.jessfraz.com/post/docker-containers-on-the-desktop/>
